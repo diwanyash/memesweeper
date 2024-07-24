@@ -20,6 +20,7 @@
  ******************************************************************************************/
 #include "MainWindow.h"
 #include "Game.h"
+#include "Vei2.h"
 
 Game::Game( MainWindow& wnd )
 	:
@@ -39,6 +40,10 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
+	if (wnd.mouse.LeftIsPressed())
+	{
+		field.OnRevealedClick(wnd.mouse.GetPos());
+	}
 }
 
 void Game::ComposeFrame()
